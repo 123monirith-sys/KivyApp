@@ -1,0 +1,182 @@
+
+<Widgets>:
+    
+    canvas.before:
+        Color:
+            rgba: 128/255, 191/255, 209/255, 1
+        Rectangle:
+            pos: self.pos
+            size: self.width/2, self.height
+        Color:
+            rgba: 255/255, 162/255, 151/255, 1
+            
+        Rectangle:
+            pos: self.x + self.width / 2, self.y
+            size: self.width/2, self.height
+
+   
+        
+    GridLayout:
+        cols:2
+        size_hint: 0.4, 0.1
+        pos_hint: {"x":0, "top": 1}
+        Button:
+            size_hint: 0.4,0.1
+            text:"IP:"+root.ip_text
+            on_release: root.btn()
+
+        Button:
+            size_hint: 0.4,0.1
+            text:"Port:"+root.port_text
+            on_release: root.btn()
+    GridLayout:
+        cols:1
+        size_hint: 0.2, 0.1
+        pos_hint: {"right":1, "top":1}
+        Button:
+            text: f"Latency: {root.Latency:.3f} ms"
+
+    GridLayout:
+        cols:1
+        size_hint: 0.15, 0.4
+        pos_hint: {"right":1, "center_y": 0.5}
+        Button:
+            background_color:223/255 , 34/255, 34/255,1
+            size_hint: 0.2,0.1
+            text:"S.Zone1"
+            on_release:
+                root.button(9) 
+                root.send_button_data()
+        Label:
+            text:""
+            size_hint: 0.2,0.05
+        Button:
+            background_color:223/255, 34/255, 34/255,1
+            size_hint: 0.2,0.1
+            text:"R.Zone3"
+            on_release:
+                root.button(10) 
+                root.send_button_data()
+    GridLayout:
+        cols:1
+        size_hint: 0.15, 0.4
+        pos_hint: {"left":1, "center_y": 0.5}
+        Button:
+            background_color:50/255 , 0, 1,1
+            size_hint: 0.2,0.1
+            text:"S.Zone1"
+            on_release:
+                root.button(11) 
+                root.send_button_data()
+        Label:
+            text:""
+            size_hint: 0.2,0.05
+        Button:
+            background_color:50/255 , 0, 1,1
+            size_hint: 0.2,0.1
+            text:"R.Zone3"
+            on_release: 
+                root.button(12) 
+                root.send_button_data()
+    GridLayout:
+        cols:1
+        size_hint: 0.37, 0.5
+        pos_hint: {"center_x": 0.5, "y": 0.25}
+        GridLayout:
+            cols:3
+            GridLayout:
+                cols:1
+                Button:
+                    background_color:app.color2
+                    text:""
+                    on_release: 
+                        root.button(0) 
+                        root.send_button_data()
+                Button:
+                    background_color:app.color4
+                    text:""
+                    on_release: 
+                        root.button(1)
+                        root.send_button_data()
+                Button:
+                    background_color:app.color2
+                    text:""
+                    on_release: 
+                        root.button(2)
+                        root.send_button_data()
+            GridLayout:
+                cols:1
+                Button:
+                    background_color:app.color4
+                    text:""
+                    on_release: 
+                        root.button(3)
+                        root.send_button_data()
+                Button:
+                    background_color:app.color6
+                    text:""
+                    on_release: 
+                        root.button(4)
+                        root.send_button_data()
+                        
+                Button:
+                    background_color:app.color4
+                    text:""
+                    on_release: 
+                        root.button(5)
+                        root.send_button_data()
+            GridLayout:
+                cols:1
+                Button:
+                    background_color:app.color2
+                    text:""
+                    on_release: 
+                        root.button(6)
+                        root.send_button_data()
+                Button:
+                    background_color:app.color4
+                    text:""
+                    on_release: 
+                        root.button(7)
+                        root.send_button_data()
+                Button:
+                    background_color:app.color2
+                    text:""
+                    on_release: 
+                        root.button(8)
+                        root.send_button_data()
+
+    Label:
+        pos_hint: {"center_x": 0.5, "y": 0.3}
+        text: "Meihua Forest"
+                
+
+<P>:
+    GridLayout:
+        cols: 1
+        size_hint: 0.8, 0.3
+        pos_hint: {"y": 0.6, "center_x": 0.5}
+        GridLayout:
+            cols: 2
+            
+            Label:
+                text: "IP:"
+                size_hint: 0.4, 0.3
+            TextInput:
+                id: ip_input
+                multiline: False
+                hint_text: "Enter IP Address"
+            Label:
+                text: "Port:"
+                size_hint: 0.4, 0.3
+            TextInput:
+                id: port_input
+                multiline: False
+                hint_text: "Enter Port Number"
+    Button:
+        text: "Save"
+        size_hint: 0.2, 0.2
+        pos_hint: {"y": 0.35, "center_x": 0.5}
+        on_release: root.save()
+        
+            
