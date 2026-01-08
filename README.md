@@ -1,8 +1,8 @@
-# X5 Lite Controller for Android
+# X5 Lite Controller for ABU Robocon 2026
 
-A lightweight Android app built with **Kivy** that reads input from an **X5 Lite gamepad** (via USB OTG or Bluetooth) and sends real-time joystick/button data over **UDP**.
+A lightweight Android app built with **Kivy** that reads input from an **X5 Lite gamepad** (via USB OTG) and sends real-time joystick/button data over **UDP**.
 
-Perfect for controlling robots, drones, or simulators wirelessly from your Android device.
+Perfect for controlling robots or simulators wirelessly from your Android device.
 
 ![App Screenshot](screenshot.png) <!-- Optional but recommended -->
 
@@ -12,18 +12,17 @@ Perfect for controlling robots, drones, or simulators wirelessly from your Andro
 - Reads X5 Lite gamepad input using Kivy's native Android joystick support
 - Sends data as JSON over UDP (configurable IP/port)
 - Displays round-trip latency
-- Auto-rotating UI (portrait + landscape)
 - Saves IP/Port settings during session
 - No root or special permissions required
 
 ---
 
 ## 📱 How to Use
-1. **Connect your X5 Lite** via USB OTG or Bluetooth  
-   → Make sure it's in **gamepad mode** (press **HOME + X**)
-2. Open the app
-3. Tap **"Configure IP/Port"** to set your target device address
-4. Move sticks or press buttons → data is sent automatically
+1. **Connect your X5 Lite** via USB OTG
+   → Enable OTG in you setting
+3. Open the app
+4. Tap **"Configure IP/Port"** to set your target device address
+5. Move sticks or press buttons → data is sent automatically
 
 > 📦 **UDP Format**:  
 > ```json
@@ -67,10 +66,3 @@ This project **only builds reliably** with a specific combination:
 5. **Find your APK app**
    ```bash
    ls bin
-   
-   
-    
-
-
-
-   
